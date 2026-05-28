@@ -13,7 +13,7 @@ The project was developed using **AI-assisted engineering** methodologies, lever
 
 ## Live Demo
 
-🚀 [View Live Demo](https://agentiq.vercel.app)
+🚀 [View Live Demo](https://agentiq-ai-learning-platform.vercel.app/)
 
 ## Features
 
