@@ -17,20 +17,22 @@ The project was developed using **AI-assisted engineering** methodologies, lever
 
 ## Features
 
-- ✅ **6 Fully Responsive Pages:** Home, Courses, Roadmap, About, Contact, and Course Details.
-- ✅ **Dynamic Course Catalog:** Real-time search and category filtering for a seamless browsing experience.
-- ✅ **Deep-Dive Course Details:** Comprehensive module-by-module curriculum and skill mapping for each course.
-- ✅ **AI Engineer Roadmap:** A visual 4-stage guide to mastering AI engineering.
-- ✅ **Interactive AI Chatbot:** Floating widget (AgentBot) to assist users with common queries.
-- ✅ **Modern Aesthetic:** A bold, dark design system with vibrant gradients and smooth transitions.
-- ✅ **Zero-Backend Architecture:** Powered by a centralized static data store for maximum performance and portability.
+- ✅ **7 Fully Responsive Pages:** Home, Courses, Dashboard, Roadmap, About, Contact, and Course Details.
+- ✅ **User Learning Dashboard:** A personalized hub for students to track enrolled courses, view progress, and access earned certificates.
+- ✅ **Smart Course Assistant:** A functional, rule-based chatbot that provides real-time course recommendations and details.
+- ✅ **Integrated Payment System:** Secure multi-method checkout supporting Credit/Debit Cards, Mobile Wallets (EasyPaisa/JazzCash), and Bank Transfers.
+- ✅ **Interactive Enrollment Flow:** Professional sign-up process with real-time form validation and persistence.
+- ✅ **Dynamic Course Catalog:** Real-time search and category filtering with high-quality, topic-specific Unsplash visuals.
+- ✅ **AI Engineer Roadmap:** A visual 4-stage guide to mastering AI engineering with detailed topic and tool mapping.
+- ✅ **Professional Aesthetic:** A clean, light white and blue design system optimized for readability and professional trust.
+- ✅ **Robust Image Handling:** Custom `SafeImage` system with automated fallbacks for resilient visual delivery.
 
 ## Tech Stack
 
-| Frontend | Backend | Tools |
+| Frontend | Backend/Persistence | Tools |
 | :--- | :--- | :--- |
-| Next.js 14/15 (App Router) | Static (lib/data.ts) | Gemini CLI |
-| TypeScript | | Spec-Kit Plus |
+| Next.js 14/15 (App Router) | Static Data (lib/data.ts) | Gemini CLI |
+| TypeScript | localStorage (Client Persistence) | Spec-Kit Plus |
 | Tailwind CSS v4 | | Lucide React |
 
 ## Getting Started
@@ -65,27 +67,23 @@ AgentIQ/
 │   ├── constitution.md     # Mission, design guidelines, and tech standards
 │   └── plan.md             # Multi-phase development roadmap
 ├── app/                    # Next.js App Router (Pages & Layouts)
-│   ├── about/              # About page
-│   ├── contact/            # Contact page with form and FAQ
+│   ├── dashboard/          # NEW: Full User Learning Dashboard
 │   ├── courses/            # Course listing & Dynamic detail pages ([slug])
 │   ├── roadmap/            # AI Learning Roadmap
-│   ├── globals.css         # Tailwind v4 theme & global styles
+│   ├── globals.css         # NEW: Professional Light Mode theme
 │   ├── layout.tsx          # Root layout with Navbar/Footer/ChatWidget
-│   └── page.tsx            # Homepage
+│   └── page.tsx            # Refactored Homepage
 ├── components/             # Reusable UI Components
-│   ├── CategoryFilter.tsx
-│   ├── ChatWidget.tsx
-│   ├── CourseCard.tsx
-│   ├── Footer.tsx
-│   ├── Navbar.tsx
-│   └── RoadmapStep.tsx
+│   ├── EnrollmentModal.tsx # NEW: Multi-step enrollment & payment
+│   ├── SafeImage.tsx       # NEW: Resilient image loading component
+│   ├── ChatWidget.tsx      # UPDATED: Smart Course Assistant logic
+│   ├── CourseCard.tsx      # UPDATED: Dashboard integration & progress
+│   └── ...
 ├── history/                # Development History & PHRs
 │   └── prompts/            # Traceable Prompt History Records
 ├── lib/                    # Shared Utilities & Data
 │   ├── data.ts             # Centralized static data store
-│   └── utils.ts            # Core utility functions (cn, formatting)
-├── public/                 # Static assets (images, icons)
-└── .specify/               # Speckit Plus templates and scripts
+└── ...
 ```
 
 ## Spec-Kit Plus (Speckit Plus)
@@ -97,7 +95,7 @@ This project strictly follows the **Spec-Driven Development (SDD)** pattern. The
 
 ## Environment Variables
 
-No external API keys or environment variables are required for this demo version, as it uses a centralized static data store.
+No external API keys or environment variables are required for this demo version, as it uses client-side `localStorage` for persistence.
 
 ## Deployment
 
@@ -106,16 +104,10 @@ Deploying AgentIQ on Vercel is straightforward:
 1. Push your code to a GitHub repository.
 2. Connect the repository to your [Vercel](https://vercel.com) dashboard.
 3. Vercel will automatically detect the Next.js project and deploy it.
-4. Enjoy your live AI learning platform!
 
 ## Team Members
 
-- **Member 1** - [GitHub Profile](https://github.com/placeholder1)
-- **Member 2** - [GitHub Profile](https://github.com/placeholder2)
-
-## Screenshots
-
-*Add screenshots here*
+- **Zunair** - [GitHub Profile](https://github.com/zunair)
 
 ---
 Built with ❤️ by the AgentIQ Team using **Gemini CLI** and **Spec-Kit Plus**.
