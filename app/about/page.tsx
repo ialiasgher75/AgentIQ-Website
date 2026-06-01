@@ -31,12 +31,12 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="flex-grow bg-slate-900 min-h-screen">
+    <main className="flex-grow bg-white min-h-screen">
       {/* HERO */}
-      <section className="bg-gradient-to-r from-indigo-900 to-slate-900 py-24 px-4 text-center">
+      <section className="bg-slate-50 py-24 px-4 text-center border-b border-slate-200">
         <div className="max-w-4xl mx-auto">
-          <h1 className="font-black text-5xl text-white">About AgentIQ</h1>
-          <p className="text-gray-400 text-xl mt-6 leading-relaxed">
+          <h1 className="font-black text-5xl text-slate-900">About AgentIQ</h1>
+          <p className="text-slate-500 text-xl mt-6 leading-relaxed font-medium">
             We are on a mission to democratize AI education and empower the next generation of Agentic AI Engineers.
           </p>
         </div>
@@ -44,41 +44,41 @@ export default function AboutPage() {
 
       {/* MISSION & VISION */}
       <section className="max-w-4xl mx-auto px-4 py-16">
-        <div className="bg-slate-800 rounded-2xl p-10 border-l-4 border-indigo-500 shadow-xl">
-          <p className="text-sm text-indigo-400 font-semibold uppercase tracking-wider mb-4">
+        <div className="bg-white rounded-2xl p-10 border-l-8 border-blue-600 shadow-sm border-y border-r border-slate-200">
+          <p className="text-sm text-blue-600 font-black uppercase tracking-widest mb-4">
             Our Mission
           </p>
-          <p className="text-2xl text-gray-300 italic leading-relaxed">
+          <p className="text-2xl text-slate-700 italic leading-relaxed font-medium">
             Empower people to become AI and Agentic AI engineers through structured, modern, and accessible learning.
           </p>
         </div>
 
-        <div className="bg-slate-800 rounded-2xl p-8 mt-6 border-l-4 border-cyan-500 shadow-xl">
-          <p className="text-sm text-cyan-400 font-semibold uppercase mb-4">
+        <div className="bg-white rounded-2xl p-8 mt-6 border-l-8 border-blue-400 shadow-sm border-y border-r border-slate-200">
+          <p className="text-sm text-blue-500 font-black uppercase tracking-widest mb-4">
             Our Vision
           </p>
-          <p className="text-xl text-gray-300 leading-relaxed">
+          <p className="text-xl text-slate-700 leading-relaxed font-medium">
             To be the global standard for AI engineering education, where anyone with a passion for technology can master the tools needed to shape an autonomous future.
           </p>
         </div>
       </section>
 
       {/* CORE VALUES */}
-      <section className="bg-slate-800/30 py-20 px-4">
+      <section className="bg-slate-50 py-20 px-4 border-y border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-black text-3xl text-white text-center mb-12 uppercase tracking-widest">
+          <h2 className="font-black text-3xl text-slate-900 text-center mb-12 uppercase tracking-widest">
             Our Core Values
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <div key={index} className="bg-slate-800 rounded-xl p-6 border border-slate-700/50 shadow-lg hover:border-indigo-500/30 transition-colors">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${value.color} shadow-lg shadow-${value.color.split('-')[1]}-500/20 text-white`}>
+              <div key={index} className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:border-blue-300 transition-colors">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-blue-600 shadow-lg shadow-blue-600/20 text-white`}>
                   {value.icon}
                 </div>
-                <h3 className="font-bold text-white text-lg">
+                <h3 className="font-black text-slate-900 text-lg">
                   {value.title}
                 </h3>
-                <p className="text-gray-400 text-sm mt-2 leading-relaxed">
+                <p className="text-slate-500 text-sm mt-2 leading-relaxed font-medium">
                   {value.description}
                 </p>
               </div>
@@ -89,27 +89,27 @@ export default function AboutPage() {
 
       {/* INSTRUCTORS */}
       <section className="max-w-7xl mx-auto px-4 py-20">
-        <h2 className="font-black text-3xl text-white text-center mb-12 uppercase tracking-widest">
+        <h2 className="font-black text-3xl text-slate-900 text-center mb-12 uppercase tracking-widest">
           Meet Our Instructors
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {instructors.map((instructor) => (
-            <div key={instructor.id} className="bg-slate-800 rounded-xl p-8 text-center border border-slate-700/50 shadow-xl group hover:bg-slate-800/80 transition-all">
+            <div key={instructor.id} className="bg-white rounded-xl p-8 text-center border border-slate-200 shadow-sm group hover:border-blue-300 transition-all">
               <img 
                 src={instructor.image} 
                 alt={instructor.name} 
-                className="rounded-full w-24 h-24 mx-auto object-cover border-4 border-indigo-500/30 group-hover:scale-110 transition-transform" 
+                className="rounded-full w-24 h-24 mx-auto object-cover border-4 border-blue-50 group-hover:scale-110 transition-transform shadow-md" 
               />
-              <h3 className="font-bold text-white text-xl mt-6">
+              <h3 className="font-black text-slate-900 text-xl mt-6">
                 {instructor.name}
               </h3>
-              <p className="text-indigo-400 font-medium text-sm">
+              <p className="text-blue-600 font-bold text-sm">
                 {instructor.role}
               </p>
-              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+              <p className="text-slate-500 text-sm mt-3 leading-relaxed font-medium">
                 {instructor.bio}
               </p>
-              <span className="bg-indigo-900/50 text-indigo-300 text-xs px-3 py-1 rounded-full mt-6 inline-block font-bold border border-indigo-500/20">
+              <span className="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full mt-6 inline-block font-black border border-slate-200 uppercase tracking-wider">
                 {instructor.experience} Experience
               </span>
             </div>
@@ -118,14 +118,14 @@ export default function AboutPage() {
       </section>
 
       {/* STATS */}
-      <section className="bg-gradient-to-r from-indigo-900 to-cyan-900 py-16 px-4">
+      <section className="bg-blue-600 py-16 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, i) => (
             <div key={i} className="text-center">
               <p className="font-black text-4xl text-white mb-2">
                 {stat.value}
               </p>
-              <p className="text-indigo-200 font-medium uppercase text-xs tracking-widest">
+              <p className="text-blue-100 font-bold uppercase text-xs tracking-[0.2em]">
                 {stat.label}
               </p>
             </div>
@@ -134,14 +134,14 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="text-center py-20 px-4">
+      <section className="text-center py-20 px-4 bg-white">
         <div className="max-w-2xl mx-auto">
-          <h2 className="font-black text-3xl text-white mb-8">
+          <h2 className="font-black text-3xl text-slate-900 mb-8">
             Start Learning Today
           </h2>
           <Link 
             href="/courses" 
-            className="bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-black px-12 py-5 rounded-xl text-xl hover:opacity-90 transition-all shadow-xl shadow-indigo-600/20 active:scale-95 inline-block"
+            className="bg-blue-600 text-white font-black px-12 py-5 rounded-xl text-xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20 active:scale-95 inline-block"
           >
             Explore Courses
           </Link>

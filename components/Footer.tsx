@@ -20,20 +20,20 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-slate-950 text-gray-400 mt-auto">
-      {/* Top gradient border */}
-      <div className="h-px bg-gradient-to-r from-indigo-600 via-cyan-500 to-indigo-600" />
+    <footer className="bg-slate-50 text-slate-500 mt-auto">
+      {/* Top blue border */}
+      <div className="h-1 bg-blue-600" />
 
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Column 1: Brand */}
         <div>
           <Link
             href="/"
-            className="font-black text-2xl bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent"
+            className="font-black text-2xl text-blue-600"
           >
             AgentIQ
           </Link>
-          <p className="text-gray-400 mt-2 font-medium">
+          <p className="text-slate-900 mt-2 font-bold">
             Learn AI. Build Agents. Shape the Future.
           </p>
           <p className="text-sm mt-3 leading-relaxed">
@@ -44,13 +44,13 @@ const Footer = () => {
 
         {/* Column 2: Quick Links */}
         <div>
-          <h3 className="font-semibold text-white mb-4 text-lg">Quick Links</h3>
+          <h3 className="font-bold text-slate-900 mb-4 text-lg">Quick Links</h3>
           <div className="flex flex-col gap-2">
             {quickLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="hover:text-white transition-colors duration-200"
+                className="hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {link.name}
               </Link>
@@ -60,14 +60,14 @@ const Footer = () => {
 
         {/* Column 3: Community */}
         <div>
-          <h3 className="font-semibold text-white mb-4 text-lg">Community</h3>
+          <h3 className="font-bold text-slate-900 mb-4 text-lg">Community</h3>
           <div className="flex gap-4">
             {socialLinks.map((social, index) => (
               <Link
                 key={index}
                 href={social.href}
                 aria-label={social.label}
-                className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors duration-200 text-white"
+                className="p-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition-colors duration-200 text-slate-600"
               >
                 {social.icon}
               </Link>
@@ -77,7 +77,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-slate-800 mt-8 pt-6 pb-8 text-center text-sm">
+      <div className="border-t border-slate-200 mt-8 pt-6 pb-8 text-center text-sm">
         <p>
           &copy; {currentYear} AgentIQ. All rights reserved.
         </p>

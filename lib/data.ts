@@ -71,7 +71,7 @@ export const courses: Course[] = [
       "The Future of AI"
     ],
     skills: ["AI Literacy", "Conceptual Thinking", "Ethics", "Problem Solving", "Tech Awareness"],
-    image: "https://picsum.photos/seed/course1/600/400"
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=220&fit=crop"
   },
   {
     id: 2,
@@ -94,7 +94,7 @@ export const courses: Course[] = [
       "Exploratory Data Analysis"
     ],
     skills: ["Python", "NumPy", "Pandas", "Matplotlib", "Data Analysis"],
-    image: "https://picsum.photos/seed/course2/600/400"
+    image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=220&fit=crop"
   },
   {
     id: 3,
@@ -117,7 +117,7 @@ export const courses: Course[] = [
       "Advanced Prompt Engineering"
     ],
     skills: ["Prompt Engineering", "LLM Interaction", "GPT-4", "Creative Writing", "Logic"],
-    image: "https://picsum.photos/seed/course3/600/400"
+    image: "https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=400&h=220&fit=crop"
   },
   {
     id: 4,
@@ -140,7 +140,7 @@ export const courses: Course[] = [
       "Agent Evaluation Frameworks"
     ],
     skills: ["LangChain", "AI Agents", "API Integration", "Python", "Autonomous Systems"],
-    image: "https://picsum.photos/seed/course4/600/400"
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=220&fit=crop"
   },
   {
     id: 5,
@@ -163,7 +163,7 @@ export const courses: Course[] = [
       "Model Quantization"
     ],
     skills: ["Fine-tuning", "LoRA", "PyTorch", "Hugging Face", "Model Evaluation"],
-    image: "https://picsum.photos/seed/course5/600/400"
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=220&fit=crop"
   },
   {
     id: 6,
@@ -186,7 +186,7 @@ export const courses: Course[] = [
       "Complex Workflow Design"
     ],
     skills: ["AutoGen", "Multi-Agent Systems", "Collaboration Logic", "Python", "Orchestration"],
-    image: "https://picsum.photos/seed/course6/600/400"
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&h=220&fit=crop"
   },
   {
     id: 7,
@@ -209,7 +209,7 @@ export const courses: Course[] = [
       "Optimizing Retrieval Quality"
     ],
     skills: ["Vector Databases", "RAG", "Embeddings", "Search Engineering", "Qdrant"],
-    image: "https://picsum.photos/seed/course7/600/400"
+    image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&h=220&fit=crop"
   },
   {
     id: 8,
@@ -232,7 +232,7 @@ export const courses: Course[] = [
       "Monitoring and Logging"
     ],
     skills: ["FastAPI", "Docker", "API Design", "Deployment", "Backend Engineering"],
-    image: "https://picsum.photos/seed/course8/600/400"
+    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=400&h=220&fit=crop"
   }
 ];
 
@@ -274,7 +274,7 @@ export const instructors: Instructor[] = [
     role: "Lead AI Scientist",
     bio: "Ph.D. in Computer Science with 10+ years of experience in Natural Language Processing and AI Ethics.",
     experience: "12 Years",
-    image: "https://picsum.photos/seed/instructor1/200/200"
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop"
   },
   {
     id: 2,
@@ -282,7 +282,7 @@ export const instructors: Instructor[] = [
     role: "Senior ML Engineer",
     bio: "Ex-Google ML Engineer specializing in model optimization and large-scale deployment systems.",
     experience: "8 Years",
-    image: "https://picsum.photos/seed/instructor2/200/200"
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop"
   },
   {
     id: 3,
@@ -290,7 +290,7 @@ export const instructors: Instructor[] = [
     role: "Agentic AI Specialist",
     bio: "Pioneer in multi-agent orchestration and developer of several open-source Agentic frameworks.",
     experience: "6 Years",
-    image: "https://picsum.photos/seed/instructor3/200/200"
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop"
   }
 ];
 

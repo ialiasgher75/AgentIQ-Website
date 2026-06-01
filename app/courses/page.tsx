@@ -19,15 +19,15 @@ export default function CoursesPage() {
   });
 
   return (
-    <main className="flex-grow bg-slate-900 min-h-screen">
+    <main className="flex-grow bg-white min-h-screen">
       {/* HERO */}
-      <section className="bg-gradient-to-r from-indigo-900 via-slate-900 to-cyan-900 py-20 px-4 text-center">
+      <section className="bg-slate-50 py-20 px-4 text-center border-b border-slate-200">
         <div className="max-w-4xl mx-auto">
-          <h1 className="font-black text-5xl text-white mb-4">All Courses</h1>
-          <p className="text-gray-400 text-lg mb-6">
+          <h1 className="font-black text-5xl text-slate-900 mb-4">All Courses</h1>
+          <p className="text-slate-500 text-lg mb-6 font-medium">
             Explore our comprehensive curriculum and start your journey towards AI mastery.
           </p>
-          <span className="inline-block bg-indigo-900/50 border border-indigo-500/50 text-indigo-300 text-sm px-4 py-2 rounded-full font-medium">
+          <span className="inline-block bg-blue-50 border border-blue-200 text-blue-600 text-sm px-4 py-2 rounded-full font-bold uppercase tracking-wider">
             {courses.length} Professional Courses Available
           </span>
         </div>
@@ -36,11 +36,11 @@ export default function CoursesPage() {
       {/* FILTERS */}
       <section className="max-w-7xl mx-auto px-4 py-8">
         <div className="relative max-w-lg mb-8">
-          <Search className="absolute left-4 top-3.5 text-gray-400" size={20} />
+          <Search className="absolute left-4 top-3.5 text-slate-400" size={20} />
           <input
             type="text"
             placeholder="Search courses..."
-            className="w-full bg-slate-800 border border-slate-600 text-white rounded-xl pl-12 pr-4 py-3 focus:outline-none focus:border-indigo-500 placeholder-gray-500 transition-colors"
+            className="w-full bg-white border border-slate-200 text-slate-900 rounded-xl pl-12 pr-4 py-3 focus:outline-none focus:border-blue-600 placeholder-slate-400 transition-colors shadow-sm"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -55,23 +55,23 @@ export default function CoursesPage() {
 
       {/* RESULTS & GRID */}
       <section className="max-w-7xl mx-auto px-4 pb-20">
-        <p className="text-gray-400 mb-6">
-          Showing <span className="text-white font-semibold">{filteredCourses.length}</span> of {courses.length} courses
+        <p className="text-slate-500 mb-6 font-medium">
+          Showing <span className="text-slate-900 font-bold">{filteredCourses.length}</span> of {courses.length} courses
         </p>
 
         {filteredCourses.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredCourses.map((course) => (
               <CourseCard key={course.id} course={course} />
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 bg-slate-800/30 rounded-2xl border border-slate-800">
-            <h3 className="text-xl text-white font-bold mb-2">No courses found</h3>
-            <p className="text-gray-400">Try a different search or filter to find what you're looking for.</p>
+          <div className="text-center py-20 bg-slate-50 rounded-2xl border border-slate-200">
+            <h3 className="text-xl text-slate-900 font-bold mb-2">No courses found</h3>
+            <p className="text-slate-500">Try a different search or filter to find what you're looking for.</p>
             <button 
               onClick={() => { setSelectedCategory("All"); setSearchQuery(""); }}
-              className="mt-6 text-indigo-400 hover:text-indigo-300 font-semibold underline"
+              className="mt-6 text-blue-600 hover:text-blue-700 font-bold underline"
             >
               Clear all filters
             </button>

@@ -1,11 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasDashboard, setHasDashboard] = useState(false);
+
+  useEffect(() => {
+    const checkDashboard = () => {
+      const saved = localStorage.getItem("enrolledCourses");
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          setHasDashboard(parsed.length > 0);
+        } catch (e) {}
+      }
+    };
+    
+    checkDashboard();
+    // Also listen for storage changes in other tabs
+    window.addEventListener("storage", checkDashboard);
+    return () => window.removeEventListener("storage", checkDashboard);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -15,15 +33,19 @@ const Navbar = () => {
     { name: "Contact", href: "/contact" },
   ];
 
-  const linkClass = "text-gray-300 hover:text-white transition-colors duration-200";
+  if (hasDashboard) {
+    navLinks.splice(1, 0, { name: "Dashboard", href: "/dashboard" });
+  }
+
+  const linkClass = "text-slate-600 hover:text-blue-600 font-medium transition-colors duration-200";
 
   return (
-    <nav className="sticky top-0 z-50 bg-slate-900 backdrop-blur-md border-b border-slate-800">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Left side: Logo */}
         <Link 
           href="/" 
-          className="font-black text-2xl bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent"
+          className="font-black text-2xl text-blue-600"
         >
           AgentIQ
         </Link>
@@ -45,7 +67,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Link 
             href="/courses" 
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg font-semibold transition-colors duration-200"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-semibold transition-colors duration-200"
           >
             Start Learning
           </Link>
@@ -55,7 +77,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none"
+            className="text-slate-600 focus:outline-none"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -64,7 +86,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-slate-900 border-t border-slate-800 px-4 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-slate-200 px-4 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
@@ -77,7 +99,7 @@ const Navbar = () => {
           ))}
           <Link 
             href="/courses" 
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg font-semibold transition-colors duration-200 text-center"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-semibold transition-colors duration-200 text-center"
             onClick={() => setIsOpen(false)}
           >
             Start Learning
