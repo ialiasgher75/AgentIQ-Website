@@ -6,16 +6,22 @@ import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasDashboard, setHasDashboard] = useState(false);
+  const [isEnrolled, setIsEnrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const checkDashboard = () => {
-      const saved = localStorage.getItem("enrolledCourses");
-      if (saved) {
-        try {
+      try {
+        const saved = localStorage.getItem("enrolledCourses");
+        if (saved) {
           const parsed = JSON.parse(saved);
-          setHasDashboard(parsed.length > 0);
-        } catch (e) {}
+          setIsEnrolled(parsed.length > 0);
+        } else {
+          setIsEnrolled(false);
+        }
+      } catch (e) {
+        setIsEnrolled(false);
       }
     };
     
@@ -25,6 +31,8 @@ const Navbar = () => {
     return () => window.removeEventListener("storage", checkDashboard);
   }, []);
 
+  if (!mounted) return null;
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Courses", href: "/courses" },
@@ -33,7 +41,7 @@ const Navbar = () => {
     { name: "Contact", href: "/contact" },
   ];
 
-  if (hasDashboard) {
+  if (isEnrolled) {
     navLinks.splice(1, 0, { name: "Dashboard", href: "/dashboard" });
   }
 
