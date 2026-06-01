@@ -107,7 +107,9 @@ Deploying AgentIQ on Vercel is straightforward:
 
 ## Team Members
 
-- **Zunair** - [GitHub Profile](https://github.com/zunair)
+- **Ali Asgher** - [GitHub Profile](https://github.com/ialiasgher75)
+- **Shariq Hussain** - [GitHub Profile][(https://github.com/shariqhussain1)]
+
 
 ---
 Built with ❤️ by the AgentIQ Team using **Gemini CLI** and **Spec-Kit Plus**.
